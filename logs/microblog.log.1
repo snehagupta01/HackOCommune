@@ -1,4 +1,4 @@
-2020-07-03 18:47:50,850 ERROR: Exception on /user/w [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
+2020-07-03 18:48:44,628 ERROR: Exception on /user/w [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1278, in _execute_context
     cursor, statement, parameters, context
@@ -78,6 +78,41 @@ FROM user, followers
 WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
 [parameters: (5,)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-2020-07-03 18:48:25,486 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:48:32,084 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:48:40,205 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:53:59,394 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:54:08,974 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:56:55,712 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:57:28,301 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:57:35,982 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:57:57,654 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:58:05,760 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:58:12,963 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:58:23,073 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:05:09,153 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:06:08,467 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:06:42,851 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:08:28,436 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:08:34,512 ERROR: Exception on / [POST] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\udemy free\microblog github\microblog\app\routes.py", line 23, in index
+    post = Post(body=form.post.data, author=current_user)
+NameError: name 'Post' is not defined
+2020-07-03 19:10:30,551 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:21:57,583 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:23:17,815 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:27:53,978 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 19:50:55,801 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 20:31:01,523 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:45]
