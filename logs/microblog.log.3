@@ -1,4 +1,4 @@
-2020-07-03 18:48:44,628 ERROR: Exception on /user/w [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
+2020-07-03 18:33:03,078 ERROR: Exception on /user/sn [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1278, in _execute_context
     cursor, statement, parameters, context
@@ -40,7 +40,7 @@ Traceback (most recent call last):
   File "D:\udemy free\microblog github\microblog\app\templates\base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
   File "D:\udemy free\microblog github\microblog\app\templates\user.html", line 11, in block "content"
-    <p>{{user.followers.count()}} followers, {{user.followed.count() }} following</p>
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\orm\dynamic.py", line 335, in count
     return self._clone(sess).count()
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3771, in count
@@ -76,14 +76,48 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: follo
 FROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
 FROM user, followers 
 WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
-[parameters: (5,)]
+[parameters: (4,)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-2020-07-03 18:53:59,394 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:54:08,974 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:56:55,712 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:28,301 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:35,982 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:57,654 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:05,760 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:12,963 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:23,073 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:33:44,543 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:33:48,019 ERROR: Exception on /user/sn [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\udemy free\microblog github\microblog\app\routes.py", line 81, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\udemy free\microblog github\microblog\app\templates\user.html", line 22, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-07-03 18:35:22,548 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:37:01,641 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:38:13,288 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:42:53,138 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:46:24,612 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]

@@ -1,4 +1,12 @@
-2020-07-03 18:48:44,628 ERROR: Exception on /user/w [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
+2020-07-03 17:21:23,236 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 17:21:38,657 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 17:38:51,221 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 17:40:18,659 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:04:13,908 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:11:06,055 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:29:30,836 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:31:16,181 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:31:20,729 ERROR: Exception on /user/sn [GET] [in d:\udemy free\microblog github\microblog\venv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1278, in _execute_context
     cursor, statement, parameters, context
@@ -40,7 +48,7 @@ Traceback (most recent call last):
   File "D:\udemy free\microblog github\microblog\app\templates\base.html", line 30, in top-level template code
     {% block content %}{% endblock %}
   File "D:\udemy free\microblog github\microblog\app\templates\user.html", line 11, in block "content"
-    <p>{{user.followers.count()}} followers, {{user.followed.count() }} following</p>
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\orm\dynamic.py", line 335, in count
     return self._clone(sess).count()
   File "d:\udemy free\microblog github\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3771, in count
@@ -76,14 +84,6 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: follo
 FROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
 FROM user, followers 
 WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
-[parameters: (5,)]
+[parameters: (4,)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-2020-07-03 18:53:59,394 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:54:08,974 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:56:55,712 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:28,301 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:35,982 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:57:57,654 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:05,760 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:12,963 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
-2020-07-03 18:58:23,073 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
+2020-07-03 18:32:57,557 INFO: Microblog startup [in D:\udemy free\microblog github\microblog\app\__init__.py:43]
