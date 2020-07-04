@@ -1,2 +1,2 @@
 heroku ps:scale web=1
-web:gunicorn microblog:app
+web gunicorn microblog:app
