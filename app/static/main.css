@@ -1,11 +1,10 @@
 body {
-    background: #fafafa;
-    color: #333333;
+    background-image: url("https://thumbs.dreamstime.com/b/hacker-steals-data-concept-design-85409852.jpg");
     margin-top: 5rem;  
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color:white;
   }
   
   .bg-steel {

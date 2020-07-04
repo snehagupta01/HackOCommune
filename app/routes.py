@@ -27,7 +27,7 @@ def index():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post is now live!')
+        flash('Your post is now live!','info')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
     posts = current_user.followed_posts().paginate(
@@ -113,7 +113,7 @@ def edit_profile():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
-        flash('Your changes have been saved.')
+        flash('Your changes have been saved.','info')
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
@@ -136,7 +136,7 @@ def follow(username):
             return redirect(url_for('user', username=username))
         current_user.follow(user)
         db.session.commit()
-        flash('You are following {}!'.format(username))
+        flash('You are following {}!'.format(username),'success')
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
@@ -152,11 +152,11 @@ def unfollow(username):
             flash('User {} not found.'.format(username))
             return redirect(url_for('index'))
         if user == current_user:
-            flash('You cannot unfollow yourself!')
+            flash('You cannot unfollow yourself!',danger)
             return redirect(url_for('user', username=username))
         current_user.unfollow(user)
         db.session.commit()
-        flash('You are not following {}.'.format(username))
+        flash('You are not following {}.'.format(username),'success')
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
