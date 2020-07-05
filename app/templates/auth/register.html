@@ -63,14 +63,15 @@
                     {% endif %}
                 </div>
             </fieldset>
+           
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
+                <small class="text-muted ml-2">
+                    <a href="{{ url_for('auth.login') }}">Already a user ? Click to login</a>
+                   
+                </small>
             </div>
         </form>
     </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-          <h3 style="color:white">  Already Have An Account? <a style="color: white" classs="ml-2" href="{{ url_for('auth.login') }}">Sign In</a></h3>
-        </small>
-    </div>
+   
 {% endblock %}
